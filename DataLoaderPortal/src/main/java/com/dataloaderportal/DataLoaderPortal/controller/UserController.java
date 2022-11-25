@@ -3,6 +3,7 @@ package com.dataloaderportal.DataLoaderPortal.controller;
 import com.dataloaderportal.DataLoaderPortal.entity.User;
 import com.dataloaderportal.DataLoaderPortal.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -18,7 +19,7 @@ public class UserController {
 
     @PostConstruct
     public void initRolesAndUsers(){
-        userService.initRolesAndUser();
+        userService.initRoleAndUser();
     }
 
     @PostMapping({"/registerNewUser"})
@@ -27,12 +28,14 @@ public class UserController {
     }
 
     @GetMapping({"/forAdmin"})
+    @PreAuthorize("hasRole('Admin')")
     public String forAdmin(){
-        return "This URL is for Admins only!";
+        return "This URL is only accessible to the admin";
     }
 
-    @GetMapping({"/forUsers"})
+    @GetMapping({"/forUser"})
+    @PreAuthorize("hasRole('User')")
     public String forUser(){
-        return "This URL is for Users only!";
+        return "This URL is only accessible to the user";
     }
 }

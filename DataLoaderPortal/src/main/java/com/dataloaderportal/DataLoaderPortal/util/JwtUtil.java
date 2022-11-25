@@ -10,11 +10,10 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
-
+@Component
 public class JwtUtil {
 
-    private static final String SECRET_KEY = "learn_programming_yourself";
-
+    private static final String SECRET_KEY = "data_loader_portal";
     private static final int TOKEN_VALIDITY = 3600 * 5;
 
     public String getUsernameFromToken(String token) {
