@@ -2,8 +2,8 @@ package com.dataloaderportal.DataLoaderPortal.service;
 
 import com.dataloaderportal.DataLoaderPortal.entity.Role;
 import com.dataloaderportal.DataLoaderPortal.entity.User;
-import com.dataloaderportal.DataLoaderPortal.model.RoleModel;
-import com.dataloaderportal.DataLoaderPortal.model.UserModel;
+import com.dataloaderportal.DataLoaderPortal.repo.RoleRepo;
+import com.dataloaderportal.DataLoaderPortal.repo.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -15,10 +15,10 @@ import java.util.Set;
 public class UserService {
 
     @Autowired
-    private UserModel userModel;
+    private UserRepo userModel;
 
     @Autowired
-    private RoleModel roleModel;
+    private RoleRepo roleModel;
 
     @Autowired
     private PasswordEncoder passwordEncoder;

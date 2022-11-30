@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.*;
 import javax.annotation.PostConstruct;
 
 @RestController
-@CrossOrigin("*")
 public class UserController {
 
     @Autowired

@@ -3,7 +3,7 @@ package com.dataloaderportal.DataLoaderPortal.service;
 import com.dataloaderportal.DataLoaderPortal.entity.JwtRequest;
 import com.dataloaderportal.DataLoaderPortal.entity.JwtResponse;
 import com.dataloaderportal.DataLoaderPortal.entity.User;
-import com.dataloaderportal.DataLoaderPortal.model.UserModel;
+import com.dataloaderportal.DataLoaderPortal.repo.UserRepo;
 import com.dataloaderportal.DataLoaderPortal.util.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -24,7 +24,7 @@ public class JwtService implements UserDetailsService {
     @Autowired
     private JwtUtil jwtUtil;
     @Autowired
-    private UserModel userModel;
+    private UserRepo userModel;
 
     @Autowired
     private AuthenticationManager authenticationManager;
