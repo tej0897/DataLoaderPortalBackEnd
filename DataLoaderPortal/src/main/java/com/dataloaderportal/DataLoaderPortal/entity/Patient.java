@@ -1,12 +1,15 @@
 package com.dataloaderportal.DataLoaderPortal.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Patient {
 
     @Id
+    @Column(name="patientID")
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    private Long patientID;
+
     private String patientName;
     private String address;
     private String dob;
@@ -18,7 +21,8 @@ public class Patient {
     @Override
     public String toString() {
         return "Patient{" +
-                "patientName='" + patientName + '\'' +
+                "patientID=" + patientID +
+                ", patientName='" + patientName + '\'' +
                 ", address='" + address + '\'' +
                 ", dob='" + dob + '\'' +
                 ", email='" + email + '\'' +
@@ -31,7 +35,8 @@ public class Patient {
     public Patient() {
     }
 
-    public Patient(String patientName, String address, String dob, String email, String phone, String drugID, String drugName) {
+    public Patient(Long patientID, String patientName, String address, String dob, String email, String phone, String drugID, String drugName) {
+        this.patientID = patientID;
         this.patientName = patientName;
         this.address = address;
         this.dob = dob;
@@ -39,6 +44,14 @@ public class Patient {
         this.phone = phone;
         this.drugID = drugID;
         this.drugName = drugName;
+    }
+
+    public Long getPatientID() {
+        return patientID;
+    }
+
+    public void setPatientID(Long patientID) {
+        this.patientID = patientID;
     }
 
     public String getPatientName() {
@@ -96,6 +109,4 @@ public class Patient {
     public void setDrugName(String drugName) {
         this.drugName = drugName;
     }
-
-
 }
