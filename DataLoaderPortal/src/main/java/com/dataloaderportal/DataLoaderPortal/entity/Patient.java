@@ -8,7 +8,7 @@ public class Patient {
     @Id
     @Column(name="patientID")
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    private Long patientID;
+    private int patientID;
 
     private String patientName;
     private String address;
@@ -35,7 +35,7 @@ public class Patient {
     public Patient() {
     }
 
-    public Patient(Long patientID, String patientName, String address, String dob, String email, String phone, String drugID, String drugName) {
+    public Patient(int patientID, String patientName, String address, String dob, String email, String phone, String drugID, String drugName) {
         this.patientID = patientID;
         this.patientName = patientName;
         this.address = address;
@@ -46,11 +46,11 @@ public class Patient {
         this.drugName = drugName;
     }
 
-    public Long getPatientID() {
+    public int getPatientID() {
         return patientID;
     }
 
-    public void setPatientID(Long patientID) {
+    public void setPatientID(int patientID) {
         this.patientID = patientID;
     }
 
