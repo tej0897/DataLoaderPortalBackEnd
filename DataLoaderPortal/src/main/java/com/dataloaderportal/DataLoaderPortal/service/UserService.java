@@ -36,8 +36,8 @@ public class UserService {
         roleModel.save(userRole);
 
         User adminUser = new User();
-        adminUser.setUserName("admin123");
-        adminUser.setUserPassword(getEncodedPassword("admin@pass"));
+        adminUser.setUserName("admin123@gmail.com");
+        adminUser.setUserPassword(getEncodedPassword("admin@password"));
         adminUser.setUserFirstName("admin");
         adminUser.setUserLastName("admin");
         Set<Role> adminRoles = new HashSet<>();

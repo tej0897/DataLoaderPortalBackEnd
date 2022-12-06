@@ -10,11 +10,17 @@ public class Patient {
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private int patientID;
 
+    @Column(unique = true)
     private String patientName;
+
     private String address;
+
     private String dob;
+
     private String email;
+
     private String phone;
+
     private String drugID;
     private String drugName;
 
